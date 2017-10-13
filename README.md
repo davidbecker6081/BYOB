@@ -12,27 +12,26 @@ The API contains two tables with access to `breweries` and `beers` and returns a
 | Year                 | Brewery ID           |
 
 
-##Registration
+## Registration
 You can generate a new access token by visiting our [registration page](https://byob-db-th.herokuapp.com/). A valid email and app-name are required. Access tokens will expire after 48 hours of being generated. POST and DELETE requests require Admin access. Contact us for details. 
 
 ![BYOB-registration-page](https://i.imgur.com/VT38K9D.png)
 
-##Endpoints
+## Endpoints
 
-####Brewery Endpoints
+#### Brewery Endpoints
 
-- **[`GET` breweries]()**
-- **[`GET` breweries/:id]()**
-- **[`POST` breweries]()**
-- **[`PATCH` breweries/:id]()**
-- **[`DELETE` breweries/:id]()**
+- **[`GET` breweries](https://github.com/davidbecker6081/BYOB/blob/master/documentation/breweries_endpoints/GET_breweries.md)**
+- **[`GET` breweries/:id](https://github.com/davidbecker6081/BYOB/blob/master/documentation/breweries_endpoints/GET_breweries_id.md)**
+- **[`POST` breweries](https://github.com/davidbecker6081/BYOB/blob/master/documentation/breweries_endpoints/POST_breweries.md)**
+- **[`PATCH` breweries/:id](https://github.com/davidbecker6081/BYOB/blob/master/documentation/breweries_endpoints/PATCH_breweries_id.md)**
+- **[`DELETE` breweries/:id](https://github.com/davidbecker6081/BYOB/blob/master/documentation/breweries_endpoints/DELETE_breweries_id.md)**
 
-####Beer Endpoints
+#### Beer Endpoints
 
-- **[`GET` beers]()**
-- **[`GET` beers/:breweryID]()**
-- **[`POST` beers]()**
-- **[`PATCH` beers/:id]()**
-
-- **[`DELETE` beers/:id]()**
+- **[`GET` beers](https://github.com/davidbecker6081/BYOB/blob/master/documentation/beers_endpoints/GET%20beers.md)**
+- **[`GET` beers/:breweryID](https://github.com/davidbecker6081/BYOB/blob/master/documentation/beers_endpoints/GET%20beers:id.md)**
+- **[`POST` beers](https://github.com/davidbecker6081/BYOB/blob/master/documentation/beers_endpoints/POST%20beers.md)**
+- **[`PATCH` beers/:id](https://github.com/davidbecker6081/BYOB/blob/master/documentation/beers_endpoints/PATCH%20beers:id.md)**
+- **[`DELETE` beers/:id](https://github.com/davidbecker6081/BYOB/blob/master/documentation/beers_endpoints/DELETE%20beers:id.md)**
 
