@@ -114,6 +114,24 @@ app.get('/api/v1/beers', (request, response) => {
 			.catch(error => {
 				response.status(500).json({ error });
 			});
+	} else if (request.query.id) {
+		const { id } = request.query;
+		if (!parseInt(id)) {
+			return response.status(400).json({ error: `The id you entered, ${id}, needs to be a number.`});
+		}
+		return database('beers')
+			.select()
+			.where('id', id)
+			.then(beers => {
+				beers.length
+					? response.status(200).json(beers)
+					: response.status(404).json({
+						error: `Could not find any beer with id: ${id}`,
+					});
+			})
+			.catch(error => {
+				repsonse.status(500).json({ error });
+			});
 	}
 
 	database('beers')

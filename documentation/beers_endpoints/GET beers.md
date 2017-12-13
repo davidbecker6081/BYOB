@@ -18,10 +18,14 @@ No authentication required for **GET beers** enpoints.
 
 ## Parameters
 
-This endpoint can take a query parameter of **type**. This will return all beers of the specified type.
+This endpoint can take a query parameter of **type** or **id**. This will return all beers of the specified type or id. The id must be an integer. 
 
 ```
 /api/v1/beers?type=Saison
+```
+
+```
+/api/v1/beers?id=24500
 ```
 ***
 
@@ -83,6 +87,6 @@ https://https://byob-db-th.herokuapp.com/api/v1/beers
         "created_at": "2017-10-11T19:23:41.257Z",
         "updated_at": "2017-10-11T19:23:41.257Z"
     }
-    
+
   ]
 ```
