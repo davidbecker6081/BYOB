@@ -117,7 +117,7 @@ app.get('/api/v1/beers', (request, response) => {
 	} else if (request.query.id) {
 		const { id } = request.query;
 		if (!parseInt(id)) {
-			return response.status(400).json({ error: `The id you entered, ${id}, needs to be a number.`});
+			return response.status(404).json({ error: `The id you entered, ${id}, needs to be a number.`});
 		}
 		return database('beers')
 			.select()
@@ -130,7 +130,7 @@ app.get('/api/v1/beers', (request, response) => {
 					});
 			})
 			.catch(error => {
-				repsonse.status(500).json({ error });
+				response.status(500).json({ error });
 			});
 	}
 

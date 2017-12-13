@@ -238,6 +238,55 @@ describe('API routes', () => {
 				});
 		});
 
+		it('should return a specific beer of an id', done => {
+			chai
+				.request(server)
+				.get('/api/v1/beers?id=1')
+				.end((error, response) => {
+					response.should.have.status(200);
+					response.should.be.json;
+					response.body.length.should.equal(1);
+					response.body[0].name.should.equal('105 West / Chain Reaction Intergalactichoptopia');
+					response.body[0].should.have.property('brewery');
+					response.body[0].brewery.should.be.a('string');
+					response.body[0].brewery.should.equal('105 West Brewing Company');
+					response.body[0].should.have.property('breweryID');
+					response.body[0].breweryID.should.be.a('number');
+					response.body[0].should.have.property('id');
+					response.body[0].id.should.be.a('number');
+					response.body[0].should.have.property('created_at');
+					response.body[0].created_at.should.be.a('string');
+					response.body[0].should.have.property('updated_at');
+					response.body[0].updated_at.should.be.a('string');
+					done();
+				});
+		});
+
+		it('should return a 404 if no beer of an id was found', done => {
+			chai
+				.request(server)
+				.get('/api/v1/beers?id=0')
+				.end((err, response) => {
+					response.should.have.status(404);
+					response.should.be.json;
+					done();
+				});
+		});
+
+		it('should return a 404 if the user specified something other than an integer for an id', done => {
+			chai
+				.request(server)
+				.get('/api/v1/beers?id=a')
+				.end((err, response) => {
+					response.should.have.status(404);
+					response.should.be.json;
+					response.body.error.should.equal(
+						'The id you entered, a, needs to be a number.'
+					);
+					done();
+				});
+		});
+
 		it('should return all beers of a given brewery id', done => {
 			chai
 				.request(server)
