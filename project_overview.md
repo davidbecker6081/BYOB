@@ -76,7 +76,7 @@ In addition to responding with the appropriate status code, you are expected to 
 
 --
 
-### Next Steps
+### Next Steps - found [here](https://github.com/tylerjhevia/BYOB/issues)
 
 - Issues have been made for each '**Next Step**' including:
 	- adding endpoint handlers
